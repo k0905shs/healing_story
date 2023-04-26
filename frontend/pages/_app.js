@@ -1,5 +1,18 @@
-import '@/styles/globals.css'
+import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "../src/Layout/Header";
+import Footer from "../src/Layout/Footer";
+import { Container } from "react-bootstrap";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function App({ Component, pageProps }) {
+  return (
+    <>
+      <Header></Header>
+      <Container style={{ minHeight: "80vh" }}>
+        <Component {...pageProps} />
+      </Container>
+      <Footer></Footer>
+    </>
+  );
 }
+
+export default App;
