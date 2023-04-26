@@ -241,4 +241,6 @@ gradle-app.setting
 # Java heap dump
 *.hprof
 
+application-db.yml
+
 # End of https://www.toptal.com/developers/gitignore/api/react,maven,vue,vuejs,gradle,java,node
