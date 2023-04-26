@@ -36,7 +36,7 @@ dependencies {
     annotationProcessor "jakarta.annotation:jakarta.annotation-api"
     annotationProcessor "jakarta.persistence:jakarta.persistence-api"
 
-    //jackson Databain
+    //jackson Data Bind
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.2'
 
 }
