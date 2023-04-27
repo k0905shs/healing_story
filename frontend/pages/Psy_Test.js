@@ -1,4 +1,4 @@
-import { Container, Nav, Table } from "react-bootstrap";
+import { Container, Nav, Table, Button } from "react-bootstrap";
 import Head from "next/head";
 import { useState } from "react";
 
@@ -9,7 +9,73 @@ const Psy_Test = () => {
     setActiveTab(eventKey);
   };
 
-  const despressionQues = [];
+  const scoreChoices = [
+    {
+      id: 1,
+      result: "없음",
+    },
+    {
+      id: 2,
+      result: "2, 3일 이상",
+    },
+    {
+      id: 3,
+      result: "7일 이상",
+    },
+    {
+      id: 4,
+      result: "거의 매일",
+    },
+  ];
+  const surveyQuestions = [
+    {
+      id: 1,
+      question: "기분이 가라앉거나, 우울하거나, 희망이 없다고 느꼈다.",
+      scoreChoices,
+    },
+    {
+      id: 2,
+      question: "기분이 가라앉거나, 우울하거나, 희망이 없다고 느꼈다.",
+      scoreChoices,
+    },
+    {
+      id: 3,
+      question: "기분이 가라앉거나, 우울하거나, 희망이 없다고 느꼈다.",
+      scoreChoices,
+    },
+    {
+      id: 4,
+      question: "기분이 가라앉거나, 우울하거나, 희망이 없다고 느꼈다.",
+      scoreChoices,
+    },
+    {
+      id: 5,
+      question: "기분이 가라앉거나, 우울하거나, 희망이 없다고 느꼈다.",
+      scoreChoices,
+    },
+    {
+      id: 6,
+      question: "기분이 가라앉거나, 우울하거나, 희망이 없다고 느꼈다.",
+      scoreChoices,
+    },
+    {
+      id: 7,
+      question: "기분이 가라앉거나, 우울하거나, 희망이 없다고 느꼈다.",
+      scoreChoices,
+    },
+    {
+      id: 8,
+      question: "기분이 가라앉거나, 우울하거나, 희망이 없다고 느꼈다.",
+      scoreChoices,
+    },
+    {
+      id: 9,
+      question: "기분이 가라앉거나, 우울하거나, 희망이 없다고 느꼈다.",
+      scoreChoices,
+    },
+  ];
+
+  const [surveyScores, setSurveyScores] = useState([]);
 
   return (
     <>
@@ -58,40 +124,50 @@ const Psy_Test = () => {
                 <thead>
                   <tr>
                     <th>문항</th>
-                    <th>지난 2주 동안에</th>
-                    <th>없음</th>
-                    <th>2, 3일 이상</th>
-                    <th>7일 이상</th>
-                    <th>거의 매일</th>
+                    <th>질문</th>
+                    <th>응답</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Larry the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                  </tr>
+                  {surveyQuestions.map((question, index) => (
+                    <tr key={index}>
+                      <td>{index + 1}</td>
+                      <td>{question.question}</td>
+                      <td>
+                        {question.scoreChoices.map((scoreChoice, i) => (
+                          <div key={i} className="form-check">
+                            <input
+                              type="radio"
+                              name={`question-${index}`}
+                              value={scoreChoice.id}
+                              onChange={(event) => {
+                                const newSurveyScores = [...surveyScores];
+                                newSurveyScores[index] = [
+                                  question.id,
+                                  parseInt(event.target.value),
+                                ];
+                                setSurveyScores(newSurveyScores);
+                              }}
+                            />
+                            <label className="form-check-label">
+                              {scoreChoice.result}
+                            </label>
+                          </div>
+                        ))}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </Table>
+              <Button
+                className="btn btn-primary"
+                onClick={() => {
+                  const surveyResults = surveyScores.filter((id) => id != null);
+                  console.log(surveyResults);
+                }}
+              >
+                Submit
+              </Button>
             </div>
           )}
           {activeTab === "2" && <div>불안에 대한 내용을 보여줍니다.</div>}
