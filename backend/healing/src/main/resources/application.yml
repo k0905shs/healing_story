@@ -6,7 +6,7 @@ spring:
     include: db
   data:
   datasource:
-    url: jdbc:mysql://211.218.1.46:3306/study?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://211.218.1.46:3306/mbti_test?serverTimezone=UTC&characterEncoding=UTF-8
     driverClassName: com.mysql.cj.jdbc.Driver
 
   jpa:
