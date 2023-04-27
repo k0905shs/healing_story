@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Container, Row, Col, Dropdown, Accordion } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 export default function Home() {
   return (
@@ -12,48 +12,36 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="/css/styles.css" />
+        <link
+          rel="preload"
+          href="/fonts/NotoSansKR-Regular.otf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/NotoSansKR-Bold.otf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/NotoSansKR-Light.otf"
+          as="font"
+          crossOrigin=""
+        />
+        <link rel="preload" href="/images/main-banner.png" as="image" />
       </Head>
-      <Container>
+      <Container fluid className="p-0">
         <Row>
-          <Col>1 of 2</Col>
-          <Col>2 of 2</Col>
-        </Row>
-        <Row>
-          <Col>1 of 3</Col>
-          <Col>2 of 3</Col>
-          <Col>3 of 3</Col>
+          <img src="/images/main-banner.png" alt="Main Banner" />
         </Row>
       </Container>
-      <>
-        <button type="button" class="btn btn-primary">
-          Primary
-        </button>
-        <button type="button" class="btn btn-secondary">
-          Secondary
-        </button>
-        <button type="button" class="btn btn-success">
-          Success
-        </button>
-        <button type="button" class="btn btn-danger">
-          Danger
-        </button>
-        <button type="button" class="btn btn-warning">
-          Warning
-        </button>
-        <button type="button" class="btn btn-info">
-          Info
-        </button>
-        <button type="button" class="btn btn-light">
-          Light
-        </button>
-        <button type="button" class="btn btn-dark">
-          Dark
-        </button>
-
-        <button type="button" class="btn btn-link">
-          Link
-        </button>
-      </>{" "}
     </>
   );
 }
