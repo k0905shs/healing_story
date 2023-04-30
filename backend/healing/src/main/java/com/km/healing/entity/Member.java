@@ -1,14 +1,14 @@
 package com.km.healing.entity;
 
 import com.km.healing.common.category.Mbit;
-import com.km.healing.entity.base.BaseTImeEntity;
+import com.km.healing.entity.base.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString(of = {"id", "loginId", "password", "mbti"})
-public class Member extends BaseTImeEntity {
+public class Member extends BaseTimeEntity {
     @Column(name = "member_id")
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

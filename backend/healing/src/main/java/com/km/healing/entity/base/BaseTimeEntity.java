@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Getter
 @MappedSuperclass // JPA Entity 클래스들이 해당 추상 클래스를 상속할 경우 createDate, modifiedDate를 컬럼으로 인식
 @EntityListeners(AuditingEntityListener.class) //audting 기능
-public abstract class BaseTImeEntity {
+public abstract class BaseTimeEntity {
 
     @CreatedDate
     @Column(name = "created_at")
