@@ -8,7 +8,9 @@ import lombok.*;
 @Entity @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString(of = {"id", "loginId", "password", "mbti"})
+@Table(name = "MEMBER")
 public class Member extends BaseTimeEntity {
+
     @Column(name = "member_id")
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

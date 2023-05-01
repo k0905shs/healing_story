@@ -17,8 +17,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 class MemberEntityTest {
 
     @Autowired
-    private EntityManager em;
-    @Autowired
     private MemberRepository memberRepository;
 
     @Test

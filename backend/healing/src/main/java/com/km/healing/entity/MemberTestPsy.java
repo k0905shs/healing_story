@@ -16,4 +16,12 @@ public class MemberTestPsy extends BaseTimeEntity {
 
     @Column(name = "point")
     private int point;
+
+    @ManyToOne
+    @JoinColumn(name = "member_test_id")
+    private MemberTest memberTest;
+
+    @ManyToOne
+    @JoinColumn(name = "psy_ques_id")
+    private PsyQues psyQuestion;
 }
