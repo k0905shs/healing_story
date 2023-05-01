@@ -13,7 +13,7 @@ spring:
     database: mysql #mysql
     database-platform: org.hibernate.dialect.MySQL57Dialect #방언 mysql 설정
     hibernate:
-      ddl-auto: validate
+#      ddl-auto: validate
 
     properties:
       hibernate :
