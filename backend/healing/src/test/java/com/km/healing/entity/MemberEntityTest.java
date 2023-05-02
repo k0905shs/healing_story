@@ -2,7 +2,6 @@ package com.km.healing.entity;
 
 import com.km.healing.common.category.Mbit;
 import com.km.healing.repository.member.MemberRepository;
-import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

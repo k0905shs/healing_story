@@ -2,8 +2,9 @@ package com.km.healing.entity;
 
 import com.km.healing.common.category.Mbit;
 import com.km.healing.entity.base.BaseTimeEntity;
-import jakarta.persistence.*;
 import lombok.*;
+
+import javax.persistence.*;
 
 @Entity @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -12,7 +13,8 @@ import lombok.*;
 public class Member extends BaseTimeEntity {
 
     @Column(name = "member_id")
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "login_id")
