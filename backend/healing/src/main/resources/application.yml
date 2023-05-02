@@ -6,26 +6,23 @@ spring:
     include: db
   data:
   datasource:
-    url: jdbc:mysql://211.218.1.46:3306/study?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://211.218.1.46:3306/mbti_test?serverTimezone=UTC&characterEncoding=UTF-8
     driverClassName: com.mysql.cj.jdbc.Driver
 
   jpa:
     database: mysql #mysql
     database-platform: org.hibernate.dialect.MySQL57Dialect #방언 mysql 설정
     hibernate:
-      ddl-auto: create
-        #create : 기존테이블 삭제 후 다시 생성 (DROP + CREATE)
-        #create-drop : create와 같으나 종료시점에 테이블 DROP
-        #update : 변경분만 반영(운영DB에서는 사용하면 안됨)
-        #validate : 엔티티와 테이블이 정상 매핑되었는지만 확인
-        #none : 사용하지 않음(사실상 없는 값이지만 관례상 none이라고 한다.)
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl #테이블 엔티티 매핑시 소문자로 변환되는 것 막아줌 -> @Table에 적은대로 entity 매핑
+    #      ddl-auto: validate
 
     properties:
       hibernate :
         show_sql: true
         format_sql: true
         use_sql_comments: = true
-    generate-ddl: true # ddl-auto 기능을 사용할지 말지 정하는 속성 , 기본값 false
+#    generate-ddl: true
 
 
 logging.level:
