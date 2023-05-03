@@ -277,3 +277,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+### Querydsl
+/src/main/generated
