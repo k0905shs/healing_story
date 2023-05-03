@@ -1,0 +1,14 @@
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // Swagger 3.0.0
+
+    //core-module
+    implementation project(':healing-core')
+}
+
+bootJar {
+    enabled = true
+}
+jar {
+    enabled = true
+}
