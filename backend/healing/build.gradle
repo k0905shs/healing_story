@@ -13,7 +13,7 @@ plugins {
 
 group = 'hello'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = '11'
 
 configurations {
     compileOnly {
@@ -39,6 +39,9 @@ dependencies {
 
     // Swagger 3.0.0
     implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
+//    swagger-ui/index.html 3.0 이상
+//    swagger-ui.html 3.0 미만
+
     // querydsl dependencies
     implementation "com.querydsl:querydsl-jpa:${queryDslVersion}"
     annotationProcessor "com.querydsl:querydsl-apt:${queryDslVersion}"
