@@ -9,6 +9,7 @@ import javax.persistence.*;
 
 @Entity @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Table(name = "MEMBER_TEST_PSY")
 public class MemberTestPsy extends BaseTimeEntity {
 
     @Column(name = "member_test_psy_id")

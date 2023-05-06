@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity
-@Getter
+@Entity @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Table(name = "PSY_QUES")
 public class PsyQues extends BaseTimeEntity {
     @Column(name = "psy_ques_id")
     @Id
