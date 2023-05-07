@@ -1,6 +1,5 @@
 package com.km.service;
 
-import com.km.common.category.TestCode;
 import com.km.model.PsyQuesDto;
 import com.km.repository.psyQues.PsyQuesRepositorySupport;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +16,11 @@ public class PsyTestServiceImpl implements PsyTestService{
     @Override
     public List<PsyQuesDto.psyTest> getPsyTestByTestCode(final PsyQuesDto.testCodeParam testCodeParam) {
         return psyQuesRepositorySupport.findByTestCode(testCodeParam);
+    }
+
+    @Override
+    public int saveTestResult(PsyQuesDto.testResultParam testResultParam) {
+        return 0;
     }
 
 }

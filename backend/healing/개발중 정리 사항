@@ -1,3 +1,8 @@
 // 관계 매핑
 기본적으로 단방향 매핑으로 하고 나중에 역방향으로 객체 탐색이 꼭 필요하다고 느낄 때 추가
 ref : https://jeong-pro.tistory.com/231
+
+//jpa 벌크 인서트 안되는 이유
+** GenerationType.IDENTITY를 적용하면 insert가 배치로 실행되지 않는다
+https://stackoverflow.com/questions/27697810/why-does-hibernate-disable-insert-batching-when-using-an-identity-identifier-gen
+https://sabarada.tistory.com/220
