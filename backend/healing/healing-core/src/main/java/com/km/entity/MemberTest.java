@@ -25,4 +25,8 @@ public class MemberTest extends BaseTimeEntity {
     @JoinColumn(name = "member_id")
     private Member member;
 
+    public MemberTest(TestCode testCode, Member member) {
+        this.testCode = testCode;
+        this.member = member;
+    }
 }

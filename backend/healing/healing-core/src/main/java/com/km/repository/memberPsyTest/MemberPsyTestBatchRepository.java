@@ -19,15 +19,16 @@ public class MemberPsyTestBatchRepository {
     }
 
     public void batchInsertTestResult(final PsyQuesDto.testResultParam testResultParam) {
+        Long memberTestId = testResultParam.getMemberTestId();
         List<PsyQuesDto.testResult> batchList = testResultParam.getTestResultList();
         jdbcTemplate.batchUpdate(
-                "INSERT INTO MEMBER_PSY_TEST (point, member_test_id, psy_ques_id, created_at, updated_at)" +
+                "INSERT INTO MEMBER_TEST_PSY (point, member_test_id, psy_ques_id, created_at, updated_at)" +
                         "VALUES (?,?,?,NOW(), NOW())",
                 new BatchPreparedStatementSetter() {
                     @Override
                     public void setValues(PreparedStatement ps, int i) throws SQLException {
                         ps.setString(1, String.valueOf(batchList.get(i).getPoint()));
-                        ps.setString(2, batchList.get(i).getMemberId().toString());
+                        ps.setString(2, memberTestId.toString());
                         ps.setString(3, batchList.get(i).getPsyQuesId().toString());
                     }
                     @Override

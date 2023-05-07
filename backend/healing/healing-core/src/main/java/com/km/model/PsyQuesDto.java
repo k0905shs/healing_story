@@ -1,7 +1,10 @@
 package com.km.model;
 
 import com.km.common.category.TestCode;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -12,15 +15,18 @@ public class PsyQuesDto {
         private TestCode testCode;
     }
 
-    @Getter
+    @Getter @Setter
     public static class testResultParam {
+        private Long memberId;
+        private Long memberTestId;
         private List<testResult> testResultList;
     }
 
-    @Getter
+    @Getter @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class testResult{
         private Long psyQuesId;
-        private Long memberId;
         private int point;
     }
 
